@@ -926,38 +926,6 @@ main {
 
 
 
-/* ADS */
-
-.ad-box {
-  height: 90px;
-
-  margin: 50px 0;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.055);
-
-  border-radius: 16px;
-
-  background:
-    rgba(255, 255, 255, 0.02);
-
-  color: #646173;
-
-  font-size: 11px;
-
-  letter-spacing: 0.1em;
-
-  text-transform: uppercase;
-}
-
-
-
 /* PLAY SECTION */
 
 .play-section {
