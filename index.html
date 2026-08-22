@@ -5,46 +5,109 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+WordWiggle - Word Finder, Scrambler & Word Games
+</title>
+
+<meta
+name="description"
+content="Find words, scramble letters, challenge friends and create classroom word puzzles with WordWiggle. Free, fast and kid-friendly."
+>
+
+<meta
+name="theme-color"
+content="#0d0d18"
+>
+
+<link
+rel="icon"
+type="image/png"
+href="favicon.png"
+>
+
+<link
+rel="canonical"
+href="https://wordwiggle.online/"
+>
+
+<meta
+property="og:title"
+content="WordWiggle - Play With Words"
+>
+
+<meta
+property="og:description"
+content="Find words, scramble letters, create challenges and play classroom word games."
+>
+
+<meta
+property="og:url"
+content="https://wordwiggle.online/"
+>
+
+<meta
+property="og:type"
+content="website"
+>
+
+<link
+rel="stylesheet"
+href="style.css"
+>
 
 
-<title>WordWiggle - Free Word Scrambler & Letter Mixer</title>
-
-
-<meta name="description" content="WordWiggle is a free online word scrambler. Mix letters, create word combinations, and discover new words instantly.">
-
-
-<!-- WordWiggle favicon -->
-<link rel="icon" type="image/png" href="favicon.png">
-
-
-<!-- Official WordWiggle URL -->
-<link rel="canonical" href="https://wordwiggle.online/">
-
-
-<!-- Stylesheet -->
-<link rel="stylesheet" href="style.css">
-
-
-
-<!-- Google Analytics -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-887R1423YH"></script>
+<script
+async
+src="https://www.googletagmanager.com/gtag/js?id=G-887R1423YH"
+></script>
 
 <script>
 
-window.dataLayer = window.dataLayer || [];
+window.dataLayer =
+window.dataLayer || [];
 
-function gtag(){
-    dataLayer.push(arguments);
+function gtag() {
+
+dataLayer.push(arguments);
+
 }
 
-gtag('js', new Date());
+gtag(
+"js",
+new Date()
+);
 
-gtag('config', 'G-887R1423YH');
+gtag(
+"config",
+"G-887R1423YH"
+);
 
 </script>
 
+
+<script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "WordWiggle",
+  "url": "https://wordwiggle.online/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "description": "A free word finder, letter scrambler and word game website.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+
+</script>
 
 </head>
 
@@ -54,279 +117,1162 @@ gtag('config', 'G-887R1423YH');
 
 <header>
 
-<a href="index.html" class="logo">
-
+<a
+href="index.html"
+class="logo"
+>
 Word<span>Wiggle</span>
+</a>
 
+
+<a
+href="#play"
+class="mini-link"
+>
+More ways to Wiggle
 </a>
 
 </header>
 
 
-
-
-
 <main>
-
 
 
 <section class="hero">
 
+<div class="eyebrow">
+PLAY WITH WORDS
+</div>
+
 
 <h1>
-Mix letters.<br>
-Find words.
+
+Your letters.<br>
+
+<span>
+More possibilities.
+</span>
+
 </h1>
 
 
-
 <p>
-WordWiggle is a simple and fun word scrambler that helps you create word combinations from your letters.
+
+Find real words, scramble letters,
+challenge your friends and make
+classroom puzzles instantly.
+
 </p>
-
-
-
 
 
 <div class="tool-box">
 
 
+<div class="mode-tabs">
 
-<input 
-id="lettersInput"
-type="text"
-placeholder="Enter letters..."
+<button
+id="scrambleTab"
+class="mode-tab active"
+type="button"
 >
 
-
-
-
-<button onclick="wiggleWords()">
-
-Wiggle My Words
+✨ Wiggle
 
 </button>
 
 
+<button
+id="finderTab"
+class="mode-tab"
+type="button"
+>
+
+🔎 Find Words
+
+</button>
+
+</div>
 
 
+<!-- SCRAMBLE MODE -->
 
-<button class="clear-btn" onclick="clearWords()">
+<div id="scrambleMode">
+
+
+<label
+class="input-label"
+for="lettersInput"
+>
+
+Your letters
+
+</label>
+
+
+<div class="input-wrap">
+
+<input
+id="lettersInput"
+type="text"
+maxlength="24"
+autocomplete="off"
+spellcheck="false"
+placeholder="Try: scramble"
+>
+
+<span id="charCount">
+0/24
+</span>
+
+</div>
+
+
+<div class="options-row">
+
+<button
+class="option-chip active"
+type="button"
+data-count="12"
+>
+
+Quick mix
+
+</button>
+
+
+<button
+class="option-chip"
+type="button"
+data-count="30"
+>
+
+Mega mix
+
+</button>
+
+
+<label class="toggle-chip">
+
+<input
+id="keepEdges"
+type="checkbox"
+>
+
+<span>
+Keep first + last
+</span>
+
+</label>
+
+</div>
+
+
+<button
+id="wiggleBtn"
+class="primary-btn"
+type="button"
+>
+
+Wiggle My Words
+<span>↗</span>
+
+</button>
+
+
+<button
+id="clearBtn"
+class="clear-btn"
+type="button"
+>
 
 Clear
 
 </button>
 
 
-
-
-
 <div id="results">
 
-<p class="placeholder">
+<div class="empty-state">
 
+<div class="empty-icon">
+Aa
+</div>
+
+<p>
 Your scrambled words will appear here.
-
 </p>
 
 </div>
 
+</div>
+
+
+<div
+id="resultActions"
+class="result-actions hidden"
+>
+
+<button
+id="againBtn"
+class="secondary-btn"
+type="button"
+>
+
+Wiggle again
+
+</button>
+
+
+<button
+id="copyAllBtn"
+class="secondary-btn"
+type="button"
+>
+
+Copy all
+
+</button>
+
+
+<button
+id="shareBtn"
+class="secondary-btn"
+type="button"
+>
+
+Share
+
+</button>
+
+</div>
 
 
 </div>
 
+
+<!-- FINDER MODE -->
+
+<div
+id="finderMode"
+class="hidden"
+>
+
+
+<label
+class="input-label"
+for="finderInput"
+>
+
+Enter your letters
+
+</label>
+
+
+<div class="input-wrap">
+
+<input
+id="finderInput"
+type="text"
+maxlength="15"
+autocomplete="off"
+spellcheck="false"
+placeholder="Try: listen"
+>
+
+<span id="finderCount">
+0/15
+</span>
+
+</div>
+
+
+<div class="finder-help">
+
+We'll find real words that can
+be made using these letters.
+
+</div>
+
+
+<button
+id="findWordsBtn"
+class="primary-btn"
+type="button"
+>
+
+Find Words
+<span>↗</span>
+
+</button>
+
+
+<button
+id="finderClearBtn"
+class="clear-btn"
+type="button"
+>
+
+Clear
+
+</button>
+
+
+<div id="finderResults">
+
+<div class="empty-state">
+
+<div class="empty-icon">
+Aa
+</div>
+
+<p>
+Real words will appear here.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<div class="micro-proof">
+
+<span>
+⚡ Instant
+</span>
+
+<span>
+🔒 No sign-up
+</span>
+
+<span>
+🎓 School friendly
+</span>
+
+</div>
+
+</section>
+
+
+
+<div class="ad-box">
+Advertisement
+</div>
+
+
+
+<!-- MORE WAYS TO PLAY -->
+
+<section
+id="play"
+class="play-section"
+>
+
+
+<div class="eyebrow">
+MORE WAYS TO WIGGLE
+</div>
+
+
+<h2>
+Play your way.
+</h2>
+
+
+<p class="section-intro">
+
+Make a challenge for a friend
+or turn any word into a clean
+classroom puzzle.
+
+</p>
+
+
+<div class="play-grid">
+
+
+<article class="play-card challenge-card">
+
+<div class="play-icon">
+🎯
+</div>
+
+<h3>
+Challenge a Friend
+</h3>
+
+<p>
+
+Enter a secret word and WordWiggle
+will create a shareable puzzle link.
+
+</p>
+
+<button
+id="openChallengeBtn"
+class="play-button"
+type="button"
+>
+
+Create a challenge
+
+</button>
+
+</article>
+
+
+
+<article class="play-card classroom-card">
+
+<div class="play-icon">
+🎓
+</div>
+
+<h3>
+Classroom Mode
+</h3>
+
+<p>
+
+Turn any word into a big clean puzzle
+for lessons, quizzes and smartboards.
+
+</p>
+
+<button
+id="openClassroomBtn"
+class="play-button"
+type="button"
+>
+
+Open Classroom Mode
+
+</button>
+
+</article>
+
+
+</div>
 
 
 </section>
 
 
 
+<!-- DAILY WIGGLE -->
+
+<section
+id="daily"
+class="daily-card"
+>
 
 
+<div>
+
+<div class="eyebrow">
+COME BACK TOMORROW
+</div>
 
 
-<div class="ad-box">
+<h2>
+Daily Wiggle
+</h2>
 
-Advertisement
+
+<p>
+
+Everyone gets the same word each day.
+Scramble it, copy your funniest result
+and share it with a friend.
+
+</p>
 
 </div>
 
 
+<div class="daily-game">
+
+<div class="daily-label">
+TODAY'S WORD
+</div>
+
+
+<div
+id="dailyWord"
+class="daily-word"
+>
+
+WIGGLE
+
+</div>
+
+
+<button
+id="dailyBtn"
+class="daily-btn"
+type="button"
+>
+
+Wiggle today's word
+
+</button>
+
+
+<div
+id="dailyResult"
+class="daily-result"
+>
+
+Your daily scramble will appear here.
+
+</div>
+
+</div>
+
+
+</section>
 
 
 
+<section
+id="recentSection"
+class="recent-section hidden"
+>
 
+
+<div class="section-heading-row">
+
+<div>
+
+<div class="eyebrow">
+SAVED ON THIS DEVICE
+</div>
+
+<h2>
+Recent Wiggles
+</h2>
+
+</div>
+
+
+<button
+id="clearHistoryBtn"
+class="text-btn"
+type="button"
+>
+
+Clear history
+
+</button>
+
+</div>
+
+
+<div
+id="recentList"
+class="recent-list"
+></div>
+
+
+</section>
+
+
+
+<div class="ad-box">
+Advertisement
+</div>
 
 
 
 <section class="content">
 
 
+<div class="content-intro">
+
+
+<div class="eyebrow">
+FREE WORD TOOLS
+</div>
+
 
 <h2>
-What is a word scrambler?
+What can you do with WordWiggle?
 </h2>
-
 
 
 <p>
 
-A word scrambler is an online tool that rearranges letters to create new word combinations. Word scramblers are useful for puzzles, brainstorming, games, and finding hidden words.
+WordWiggle is built for word games,
+anagrams, classroom activities,
+puzzles, creative writing and anyone
+who simply likes playing with letters.
 
 </p>
 
 
-
-
-
-
-
-<h2>
-How to use WordWiggle
-</h2>
-
-
-
-<div class="steps">
-
-
-<div>
-
-<strong>1.</strong>
-
-Enter your letters
-
 </div>
 
 
 
-<div>
-
-<strong>2.</strong>
-
-Click Wiggle My Words
-
-</div>
-
-
-
-<div>
-
-<strong>3.</strong>
-
-Discover new combinations
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="ad-box">
-
-Advertisement
-
-</div>
-
-
-
-
-
-<h2>
+<h2 class="faq-title">
 Frequently Asked Questions
 </h2>
-
-
-
 
 
 <div class="faq">
 
 
+<details open>
 
-<h3>
+<summary>
 What is WordWiggle?
-</h3>
-
-
-<p>
-
-WordWiggle is a free tool that helps mix and scramble letters into new combinations.
-
-</p>
-
-
-
-
-
-<h3>
-Who can use a word scrambler?
-</h3>
-
+</summary>
 
 <p>
 
-Anyone can use WordWiggle for games, puzzles, writing ideas, and learning.
+WordWiggle is a free collection of
+simple word tools and games for
+scrambling letters, finding words,
+making challenges and creating
+classroom puzzles.
 
 </p>
 
+</details>
 
 
 
+<details>
 
-<h3>
+<summary>
+Does Challenge a Friend need an account?
+</summary>
+
+<p>
+
+No. The puzzle is safely stored inside
+the challenge link itself, so no account
+or database is required.
+
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
+Can teachers use Classroom Mode?
+</summary>
+
+<p>
+
+Yes. Classroom Mode is designed to
+make simple word puzzles that can be
+shown on a computer, projector or
+smartboard.
+
+</p>
+
+</details>
+
+
+
+<details>
+
+<summary>
 Is WordWiggle free?
-</h3>
-
+</summary>
 
 <p>
 
-Yes. WordWiggle is completely free to use.
+Yes. WordWiggle is free and requires
+no sign-up.
 
 </p>
 
+</details>
 
 
 </div>
 
 
-
-
-
 </section>
-
-
-
 
 
 </main>
 
 
 
-
-
-
-
 <footer>
 
-© 2026 WordWiggle. Simple word tools made fun.
+<div class="footer-links">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="privacy.html">
+Privacy Policy
+</a>
+
+</div>
+
+<p>
+© 2026 WordWiggle. Play with words.
+</p>
 
 </footer>
 
 
 
+<!-- CHALLENGE CREATOR MODAL -->
+
+<div
+id="challengeModal"
+class="modal-backdrop hidden"
+>
+
+
+<div class="modal-card">
+
+
+<button
+class="modal-close"
+data-close="challengeModal"
+type="button"
+>
+
+×
+
+
+</button>
+
+
+<div class="modal-icon">
+🎯
+</div>
+
+
+<h2>
+Challenge a Friend
+</h2>
+
+
+<p class="modal-description">
+
+Choose a secret word.
+We'll scramble it and make
+a challenge link you can share.
+
+</p>
+
+
+<label
+class="input-label"
+for="challengeWordInput"
+>
+
+Secret word
+
+</label>
+
+
+<input
+id="challengeWordInput"
+class="modal-input"
+type="text"
+maxlength="20"
+autocomplete="off"
+spellcheck="false"
+placeholder="Try: banana"
+>
+
+
+<button
+id="createChallengeBtn"
+class="primary-btn"
+type="button"
+>
+
+Create Challenge
+
+</button>
+
+
+<div
+id="challengeCreated"
+class="challenge-created hidden"
+>
+
+
+<div class="challenge-preview-label">
+PUZZLE PREVIEW
+</div>
+
+
+<div
+id="challengePreview"
+class="challenge-preview"
+>
+ANANAB
+</div>
+
+
+<div class="challenge-link-wrap">
+
+<input
+id="challengeLink"
+readonly
+>
+
+<button
+id="copyChallengeBtn"
+type="button"
+>
+
+Copy
+
+</button>
+
+</div>
+
+
+<p class="small-note">
+
+Send this link to your friend.
+The answer isn't displayed on the page.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- RECEIVED CHALLENGE MODAL -->
+
+<div
+id="receivedChallengeModal"
+class="modal-backdrop hidden"
+>
+
+
+<div class="modal-card challenge-game-card">
+
+
+<div class="modal-icon">
+🎯
+</div>
+
+
+<div class="eyebrow">
+YOU'VE BEEN CHALLENGED
+</div>
+
+
+<h2>
+Can you solve it?
+</h2>
+
+
+<div
+id="receivedScramble"
+class="challenge-big-word"
+>
+
+ANANAB
+
+</div>
+
+
+<input
+id="challengeGuessInput"
+class="modal-input"
+type="text"
+maxlength="20"
+autocomplete="off"
+spellcheck="false"
+placeholder="Type the original word"
+>
+
+
+<button
+id="submitChallengeGuess"
+class="primary-btn"
+type="button"
+>
+
+Submit Guess
+
+</button>
+
+
+<div
+id="challengeFeedback"
+class="challenge-feedback"
+></div>
+
+
+<button
+id="challengeAgainBtn"
+class="secondary-wide hidden"
+type="button"
+>
+
+Challenge someone else
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- CLASSROOM MODAL -->
+
+<div
+id="classroomModal"
+class="modal-backdrop hidden"
+>
+
+
+<div
+class="modal-card classroom-setup-card"
+>
+
+
+<button
+class="modal-close"
+data-close="classroomModal"
+type="button"
+>
+
+×
+
+</button>
+
+
+<div class="modal-icon">
+🎓
+</div>
+
+
+<h2>
+Classroom Mode
+</h2>
+
+
+<p class="modal-description">
+
+Enter a word and turn it into a
+clean classroom puzzle.
+
+</p>
+
+
+<label
+class="input-label"
+for="classroomWordInput"
+>
+
+Classroom word
+
+</label>
+
+
+<input
+id="classroomWordInput"
+class="modal-input"
+type="text"
+maxlength="24"
+autocomplete="off"
+spellcheck="false"
+placeholder="Try: photosynthesis"
+>
+
+
+<div class="difficulty-row">
+
+
+<button
+class="difficulty-btn active"
+data-difficulty="easy"
+type="button"
+>
+
+Easy
+
+</button>
+
+
+<button
+class="difficulty-btn"
+data-difficulty="normal"
+type="button"
+>
+
+Normal
+
+</button>
+
+
+<button
+class="difficulty-btn"
+data-difficulty="tricky"
+type="button"
+>
+
+Tricky
+
+</button>
+
+
+</div>
+
+
+<button
+id="startClassroomBtn"
+class="primary-btn"
+type="button"
+>
+
+Create Puzzle
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- CLASSROOM PRESENTATION -->
+
+<div
+id="classroomPresentation"
+class="classroom-presentation hidden"
+>
+
+
+<div class="classroom-topbar">
+
+
+<div class="classroom-brand">
+Word<span>Wiggle</span>
+</div>
+
+
+<div class="classroom-actions">
+
+
+<button
+id="classroomFullscreenBtn"
+type="button"
+>
+
+Fullscreen
+
+</button>
+
+
+<button
+id="classroomExitBtn"
+type="button"
+>
+
+Exit
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+<div class="classroom-center">
+
+
+<div class="classroom-mini-label">
+UNSCRAMBLE THIS WORD
+</div>
+
+
+<div
+id="classroomPuzzleWord"
+class="classroom-puzzle-word"
+>
+
+ELPPA
+
+</div>
+
+
+<div
+id="classroomAnswer"
+class="classroom-answer hidden"
+>
+
+APPLE
+
+</div>
+
+
+<div class="classroom-controls">
+
+
+<button
+id="revealClassroomBtn"
+class="classroom-main-btn"
+type="button"
+>
+
+Reveal Answer
+
+</button>
+
+
+<button
+id="newClassroomScrambleBtn"
+class="classroom-secondary-btn"
+type="button"
+>
+
+Scramble Again
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
 
 
 <script src="script.js"></script>
-
 
 
 </body>
